@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16.3)
 project(MyCppWorld)
 
 #link_directories("D:/Ruanjian0/MinGW64/mingw64/x86_64-w64-mingw32/include/myocci")

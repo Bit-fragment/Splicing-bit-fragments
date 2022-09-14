@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16.3)
 
 #行为设计模式
 project(BehaviorMode)
