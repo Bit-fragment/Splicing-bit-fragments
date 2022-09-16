@@ -13,10 +13,10 @@ add_executable(MyCppWorld_MyServer MyTextMode/Server/ServerModel.cpp
         MyTextMode/Server/Service/ServiceObject.cpp
         MyTextMode/Server/Service/ServiceObject.h)
 
-add_executable(MyCppWorld3 src/main1.cpp src/main1.h
+add_executable(MyTextMode_main1 src/main1.cpp src/main1.h
         MyTextMode/MyException.cpp MyTextMode/MyException.h )
 
-add_executable(MyCppWorld src/main2.cpp
+add_executable(MyTextMode_main2 src/main2.cpp
         mode1/FileUtil.cpp mode1/FileUtil.h mode1/Object.cpp mode1/Object.h
         MyTextMode/MyList.cpp MyTextMode/MyList.h
         MyTextMode/MyException.cpp MyTextMode/MyException.h

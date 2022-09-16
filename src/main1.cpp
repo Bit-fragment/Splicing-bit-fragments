@@ -22,7 +22,7 @@ void whileRun(long i) {
 }
 
 int main() {
-    /*catFactory catF;
+    catFactory catF;
     dogFactory dogF;
     long p = 1;
     while (1) {
@@ -36,9 +36,9 @@ int main() {
         }
         if (p == 10000)break;
         p++;
-    }*/
+    }
 
-    std::valarray<int> list(10);
+    /*std::valarray<int> list(10);
     srand((int) time(0));  // 产生随机种子  把0换成NULL也行
     for (int &item: list) {
         item = rand() % 100;
@@ -49,7 +49,7 @@ int main() {
     cout << list.min() << endl;
     cout << list.size() << endl;
     cout << list.sum() << endl;
-//    cout << list.operator!() << endl;
+    cout << list.operator!() << endl;*/
 
     /*long i = 0;
     while (1) {
