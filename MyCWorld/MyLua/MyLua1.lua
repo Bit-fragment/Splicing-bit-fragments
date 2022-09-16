@@ -14,11 +14,11 @@ function f(value)
 end
 print(f(10))
 
-list = {1,23,4,2,5,4,6}
+list = { 1, 23, 4, 2, 5, 4, 6 }
 function f2(list)
-    for i = 1, #list-1 do
-        for p = i+1, #list do
-            if list[i]>list[p] then
+    for i = 1, #list - 1 do
+        for p = i + 1, #list do
+            if list[i] > list[p] then
                 var = list[p]
                 list[p] = list[i]
                 list[i] = var
@@ -39,3 +39,16 @@ end
 cout(list)
 cout(f2(list))
 
+table = {
+    "wenhao",
+    20,
+    {
+        100,
+        {
+            "风暴之锤",
+            "黑暗之门",
+        }
+    }
+}
+
+print(table[3][2][1]);

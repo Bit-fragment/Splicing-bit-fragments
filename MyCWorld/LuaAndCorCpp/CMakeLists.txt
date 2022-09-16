@@ -14,7 +14,10 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(LuaAndCorCpp mian.c)
 
-add_executable(LuaWorldDemo LuaWorldDemo.h LuaWorldDemo.cpp)
+add_executable(LuaWorldDemo LuaWorldDemo.h LuaWorldDemo.cpp
+        FunctionDemo1.h FunctionDemo1.cpp
+        FunctionDemo2.h FunctionDemo2.cpp
+        )
 
 #target_include_directories(LuaAndCorCpp PUBLIC ${LUA_INCLUDE_DIR})
 
