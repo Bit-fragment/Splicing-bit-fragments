@@ -9,6 +9,7 @@
 #include <utility>
 #include <vector>
 #include <queue>
+#include <map>
 
 //模拟业务逻辑
 class Business {
@@ -53,6 +54,7 @@ public:
     void ExecutionQueue() {
         if (!myQueue.empty()) {
             while (!myQueue.empty()) {
+                //应当考虑将vector换成map
                 (*list)[myQueue.front()]->Start("来自命令接收者的消息");
                 myQueue.pop();
             }
@@ -110,8 +112,6 @@ private:
     ConcreteCommands concreteCommands;//具体命令
     Receiver receiver;//命令接收者
     std::vector<Business *> *list = nullptr;//初始化命令集合
-
-
 public:
     explicit Client(int size) {//生成编号 1~size 的命令
         list = new std::vector<Business *>{};
