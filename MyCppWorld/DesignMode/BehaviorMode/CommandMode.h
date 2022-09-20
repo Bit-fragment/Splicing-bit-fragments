@@ -113,7 +113,7 @@ private:
 
 
 public:
-    explicit Client(int size) {
+    explicit Client(int size) {//生成编号 1~size 的命令
         list = new std::vector<Business *>{};
         for (int i = 0; i < size; ++i) {
             auto *b1 = new Business(i);
@@ -133,11 +133,14 @@ public:
     };
 
     void pushQueue(int index) {
+        //加入队列
         concreteCommands.pushQueue(index);
     }
 
     void Execute() {
+        //执行队列中的命令
         concreteCommands.ConfirmExecute();
+        //清空队列
         concreteCommands.RevokeExecution();
     }
 
