@@ -9,6 +9,7 @@ extern "C" {
 #include "lua/lualib.h"
 #include "lua/lauxlib.h"
 };
+#include <iostream>
 
 class LuaWorldDemo {
 public:

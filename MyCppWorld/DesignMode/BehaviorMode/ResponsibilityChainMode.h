@@ -15,16 +15,7 @@ public:
     std::string VCode;//验证码
     int power{};//权限  0、1、2
     Request()= default;
-    Request(std::string username,std::string password,std::string VCode,int power){
-        /*在C++11中，标准库在<utility>中提供了一个有用的函数std::move，std::move并不能移动任何东西，
-         * 它唯一的功能是将一个左值强制转化为右值引用，继而可以通过右值引用使用该值，以用于移动语义。
-         * 从实现上讲，std::move基本等同于一个类型转换：static_cast<T&&>(lvalue);
-         * https://blog.csdn.net/p942005405/article/details/84644069*/
-        this->username = std::move(username);
-        this->password = std::move(password);
-        this->VCode = std::move(VCode);
-        this->power = power;
-    }
+    Request(std::string username,std::string password,std::string VCode,int power);
     virtual ~Request()= default;
 };
 
@@ -49,14 +40,7 @@ public:
     ~BaseHandler() override = default;
 protected:
     BaseHandler *NextObject = nullptr;
-    void next(Request *request){
-        if (NextObject){
-            std::cout<<"存在下一个处理者,请求传给该处理者。"<<std::endl;
-            NextObject->RequestProcessing(request);
-        } else{
-            std::cout<<"不存在下一个处理者,请求处理完毕。"<<std::endl;
-        }
-    }
+    void next(Request *request);
 };
 
 /*具体处理者（Concrete Handlers）包含处理请求的实际代码。
@@ -64,45 +48,25 @@ protected:
 处理者通常是独立且不可变的，需要通过构造函数一次性地获得所有必要地数据。*/
 class ConcreteHandlers_1 : public BaseHandler {//验证码检查
 public:
-    void RequestProcessing(Request *request) override {
-        std::cout<<"检查 VCode: "<<request->VCode<<" (true or false)"<<std::endl;
-        if ("FGDDQ234"==request->VCode){
-            next(request);
-        } else{
-            std::cout<<"检查 VCode 不符合要求！处理中止！FGDDQ234"<<std::endl;
-        }
-    }
+    void RequestProcessing(Request *request) override;
     ConcreteHandlers_1() =default;
-    explicit ConcreteHandlers_1(BaseHandler *NextObject) {
-        this->NextObject = NextObject;
-    }
+    explicit ConcreteHandlers_1(BaseHandler *NextObject);
     ~ConcreteHandlers_1() override =default;
 };
 
 class ConcreteHandlers_2 : public BaseHandler {//账号密码检查
 public:
-    void RequestProcessing(Request *request) override {
-        std::cout<<"检查 username: "<<request->username<<" (true or false)"<<std::endl;
-        std::cout<<"检查 password: "<<request->password<<" (true or false)"<<std::endl;
-        next(request);
-    }
+    void RequestProcessing(Request *request) override;
     ConcreteHandlers_2() =default;
-    explicit ConcreteHandlers_2(BaseHandler *NextObject) {
-        this->NextObject = NextObject;
-    }
+    explicit ConcreteHandlers_2(BaseHandler *NextObject);
     ~ConcreteHandlers_2() override =default;
 };
 
 class ConcreteHandlers_3 : public BaseHandler {//权限检查
 public:
-    void RequestProcessing(Request *request) override {
-        std::cout<<"检查 power: "<<request->power<<" (true or false)"<<std::endl;
-        next(request);
-    }
+    void RequestProcessing(Request *request) override;
     ConcreteHandlers_3() =default;
-    explicit ConcreteHandlers_3(BaseHandler *NextObject) {
-        this->NextObject = NextObject;
-    }
+    explicit ConcreteHandlers_3(BaseHandler *NextObject);
     ~ConcreteHandlers_3() override =default;
 };
 
@@ -112,13 +76,7 @@ class Client {
 public:
     Client()= default;
     ~Client()= default;
-    void run(Request *request){
-        ConcreteHandlers_3 c3;//检查权限
-        ConcreteHandlers_2 c2 = ConcreteHandlers_2(&c3);//检查账号密码
-        ConcreteHandlers_1 c1 = ConcreteHandlers_1(&c2);//检查验证码
-        c1.RequestProcessing(request);
-    }
-
+    void processRequest(Request *request);
 };
 
 

@@ -7,3 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 #职责链模式
 add_executable(ResponsibilityChainMode ResponsibilityChainMode.cpp ResponsibilityChainMode.h)
+
+#命令模式
+add_executable(CommandMode CommandMode.cpp CommandMode.h)
+

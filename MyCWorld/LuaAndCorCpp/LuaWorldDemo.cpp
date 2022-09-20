@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include "LuaWorldDemo.h"
 
+using namespace std;
+/*
+
 int client(int var) {
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
@@ -41,14 +44,43 @@ int client(int var) {
     lua_close(L);
     return 0;
 }
+*/
 
 int main() {
     //mingw 编译器下,utf-8下 代码中加入 system(“chcp 65001”) 防止中文代码
-    system("chcp 65001");
+//    system("chcp 65001");
 
-    int p = client(10);
+    //int p = client(10);
 
     //LuaWorldDemo::fuckyoulua();
 
-    return p;
+    //1.创建一个state
+    lua_State *L = luaL_newstate();
+    luaL_openlibs(L);
+    int retLoad = luaL_loadfile(L, "D:\\CK\\MyCppWorld\\MyCWorld\\MyLua\\MyLua3.lua");
+    if (retLoad == 0) {//文件是否加载成功
+        printf("load file success retLoad:%d\n", retLoad);
+    }
+    if (retLoad || lua_pcall(L, 0, 0, 0)) {
+        printf("error %s\n", lua_tostring(L, -1));
+        return -1;
+    }
+    //2.入栈操作
+    lua_pushstring(L, "I am so cool~");
+    lua_pushnumber(L, 20);
+
+    cout << lua_tostring(L, 1) << endl;
+    cout << lua_tonumber(L, 2) << endl;
+    //3.取值操作
+//    if (lua_isstring(L, 1)) {             //判断是否可以转为string
+//        cout << lua_tostring(L, 1) << endl;  //转为string并返回
+//    }
+//    if (lua_isnumber(L, 2)) {
+//        cout << lua_tonumber(L, 2) << endl;
+//    }
+
+    //4.关闭state
+    lua_close(L);
+
+    return 0;
 }
