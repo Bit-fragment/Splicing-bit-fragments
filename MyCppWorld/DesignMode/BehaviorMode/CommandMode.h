@@ -13,44 +13,34 @@
 class Business {
 private:
     int index = -1;
-    int var = 3;
 public:
-    Business(int idx) {
+    explicit Business(int idx) {
         this->index = idx;
     };
 
-    ~Business() {
-//        std::cout << "Business" << index << "被销毁" << std::endl;
-    };
+    ~Business() = default;
 
-    void run(std::string messg) {
-        std::cout << var << "业务逻辑:" << index << "  messg is:" << messg << std::endl;
+    void Start(const std::string &messg) const {
+        std::cout << "业务逻辑:" << index << "  messg is:" << messg << std::endl;
     }
 };
 
 //命令接收者(包含部分业务逻辑)
 class Receiver {
 private:
-//    std::vector<Business*> list = {};
-    std::vector<Business *> *list1 = nullptr;
+    std::vector<Business *> *list = nullptr;
 public:
     Receiver() = default;
 
     explicit Receiver(std::vector<Business *> *list) {
-//        this->list = std::move(list);
-        this->list1 = list;
+        this->list = list;
     };
 
     virtual ~Receiver() = default;
 
     void ReceiveCommand(int idx) {
-//        for (auto & it : *list1){
-//            std::cout << it << std::endl;
-//        }
-        if (0 <= idx && idx < (*list1).size()) {
-//            std::cout<<(*list1).size()<<std::endl;
-            (*list1)[idx]->run("来自命令接收者的消息");
-//            this->list[idx]->run(idx,"来自命令接收者的消息");
+        if (0 <= idx && idx < (*list).size()) {
+            (*list)[idx]->Start("来自命令接收者的消息");
         } else {
             std::cout << "没有对应业务逻辑可执行" << std::endl;
         }
@@ -86,10 +76,11 @@ public:
 };
 
 class Client {
-public:
+private:
     ConcreteCommands concreteCommands;//具体命令
     Receiver receiver;//命令接收者
     std::vector<Business *> *list = nullptr;//初始化命令集合
+public:
     explicit Client(int size) {
         list = new std::vector<Business *>{};
         for (int i = 0; i < size; ++i) {
@@ -102,9 +93,8 @@ public:
 
     ~Client() {
         std::cout << "Client析构函数执行" << std::endl;
-        for (int i = 0; i < list->size(); i++) {
-            delete (*list)[i];
-//            (*list)[i]->run("测试是否删除");
+        for (auto &i: *list) {
+            delete i;
         }
         std::vector<Business *>().swap(*list);
         delete list;
@@ -115,6 +105,5 @@ public:
     }
 
 };
-
 
 #endif //BEHAVIORMODE_COMMANDMODE_H
