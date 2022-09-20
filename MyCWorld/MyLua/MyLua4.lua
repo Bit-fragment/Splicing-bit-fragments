@@ -4,7 +4,7 @@
 --- DateTime: 2022/9/20 16:21
 ---
 
-print("hello lua world")
+print("Hello Lua World")
 
 function f1(var)
     if var <= 1 then
@@ -12,8 +12,6 @@ function f1(var)
     end
     return f1(var - 1) + var
 end
-
-arrliy = { 9, 2, 1, 7, 4, 8, 5, 6, 2, 0 }
 function f2(list)
     for i = 1, #list - 1 do
         for j = i + 1, #list do
@@ -26,7 +24,6 @@ function f2(list)
     end
     return list
 end
-
 function List_toStr(list)
     s = ""
     for i = 1, #list do
@@ -35,30 +32,23 @@ function List_toStr(list)
     return s
 end
 
+arrliy = { 9, 2, 1, 7, 4, 8, 5, 6, 2, 0 }
 print(f1(10))
-
 print(List_toStr(arrliy))
 print(List_toStr(f2(arrliy)))
 
---for i = 1, 10000 do
---    print("hello lua world")
---end
-
--- 记录开始时间
-local starttime = os.clock();                           --> os.clock()用法
-print(string.format("start time : %.4f", starttime));
-
+local starttime = os.clock();    -- 记录开始时间  --> os.clock()用法
+print(string.format("记录开始时间: %.4f", starttime));
 -- 进行耗时操作
 local sum = 0;
-for i = 1, 100000 do
+for i = 1, 1000000 do
     sum = sum + i;
-    print(sum)
 end
+local endtime = os.clock();-- 记录结束时间  --> os.clock()用法
+print(string.format("记录结束时间: %.4f", endtime));
+print(string.format("消耗的时间: %.4f", endtime - starttime));
 
--- 记录结束时间
-local endtime = os.clock();
-print(string.format("end time   : %.4f", endtime));
-print(string.format("cost time  : %.4f", endtime - starttime));
+
 
 
 
