@@ -8,6 +8,7 @@
 #include <iostream>
 #include <utility>
 #include <vector>
+#include <queue>
 
 //模拟业务逻辑
 class Business {
@@ -29,6 +30,7 @@ public:
 class Receiver {
 private:
     std::vector<Business *> *list = nullptr;
+    std::queue<int> myQueue;//命令执行队列
 public:
     Receiver() = default;
 
@@ -38,11 +40,31 @@ public:
 
     virtual ~Receiver() = default;
 
+    //将命令放入执行队列
     void ReceiveCommand(int idx) {
         if (0 <= idx && idx < (*list).size()) {
-            (*list)[idx]->Start("来自命令接收者的消息");
+            myQueue.push(idx);//放入队列
         } else {
-            std::cout << "没有对应业务逻辑可执行" << std::endl;
+            std::cout << "未找到可用的业务逻辑" << idx << "(加入执行队列失败)" << std::endl;
+        }
+    }
+
+    //执行队列中的命令
+    void ExecutionQueue() {
+        if (!myQueue.empty()) {
+            while (!myQueue.empty()) {
+                (*list)[myQueue.front()]->Start("来自命令接收者的消息");
+                myQueue.pop();
+            }
+        } else {
+            std::cout << "执行队列中没有业务逻辑可执行" << std::endl;
+        }
+    }
+
+    //清空队列
+    void EmptyQueue() {
+        while (!myQueue.empty()) {
+            myQueue.pop();
         }
     }
 };
@@ -54,7 +76,7 @@ public:
 
     virtual ~Command() = default;
 
-    virtual void Execute(int index) = 0;
+    virtual void pushQueue(int index) = 0;
 };
 
 //具体命令
@@ -70,9 +92,17 @@ public:
 
     ~ConcreteCommands() override = default;
 
-    void Execute(int index) override {
+    void pushQueue(int index) override {//将命令放入执行队列
         receiver->ReceiveCommand(index);
     };
+
+    void ConfirmExecute() {//执行队列中的命令
+        receiver->ExecutionQueue();
+    }
+
+    void RevokeExecution() {//清空队列
+        receiver->EmptyQueue();
+    }
 };
 
 class Client {
@@ -80,6 +110,8 @@ private:
     ConcreteCommands concreteCommands;//具体命令
     Receiver receiver;//命令接收者
     std::vector<Business *> *list = nullptr;//初始化命令集合
+
+
 public:
     explicit Client(int size) {
         list = new std::vector<Business *>{};
@@ -100,10 +132,25 @@ public:
         delete list;
     };
 
-    void run(int index) {
-        concreteCommands.Execute(index);
+    void pushQueue(int index) {
+        concreteCommands.pushQueue(index);
+    }
+
+    void Execute() {
+        concreteCommands.ConfirmExecute();
+        concreteCommands.RevokeExecution();
     }
 
 };
 
 #endif //BEHAVIORMODE_COMMANDMODE_H
+
+
+/** #include <queue>
+ * q.empty()               如果队列为空返回true，否则返回false
+ * q.size()                返回队列中元素的个数
+ * q.pop()                 删除队列首元素但不返回其值
+ * q.front()               返回队首元素的值，但不删除该元素
+ * q.push()                在队尾压入新元素
+ * q.back()                返回队列尾元素的值，但不删除该元素
+ * */
