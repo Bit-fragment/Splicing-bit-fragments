@@ -26,7 +26,7 @@ add_executable(LuaCppDemo LuaCppDemo.h LuaCppDemo.cpp)
 add_executable(MyAlgorithm_day1 MyAlgorithm_day1.c)
 
 # 链接OpenCV库
-#target_link_libraries(MyAlgorithm_day1 MyCWorld/LuaBin/include/liblua.a)
+#target_link_libraries(MyAlgorithm_day1 Main_c_modules/LuaBin/include/liblua.a)
 
 target_include_directories(MyAlgorithm_day1 PRIVATE ${LUA_INCLUDE_DIR})
 

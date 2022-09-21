@@ -11,7 +11,7 @@ using namespace std;
 int client(int var) {
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
-    int retLoad = luaL_loadfile(L, "D:\\CK\\MyCppWorld\\MyCWorld\\MyLua\\MyLua2.lua");
+    int retLoad = luaL_loadfile(L, "D:\\CK\\Main_cpp_modules\\Main_c_modules\\MyLua\\MyLua2.lua");
     if (retLoad == 0) {
         printf("load file success retLoad:%d\n", retLoad);
     }
@@ -57,7 +57,7 @@ int main() {
     //1.创建一个state
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
-    int retLoad = luaL_loadfile(L, "D:\\CK\\MyCppWorld\\MyCWorld\\MyLua\\MyLua3.lua");
+    int retLoad = luaL_loadfile(L, "D:\\CK\\Main_cpp_modules\\Main_c_modules\\MyLua\\MyLua3.lua");
     if (retLoad == 0) {//文件是否加载成功
         printf("load file success retLoad:%d\n", retLoad);
     }
