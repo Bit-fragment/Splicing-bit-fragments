@@ -44,7 +44,7 @@ local sum = 0;
 for i = 1, 1000000 do
     sum = sum + i;
 end
-local endtime = os.clock();-- 记录结束时间  --> os.clock()用法
+local endtime = os.clock();     -- 记录结束时间  --> os.clock()用法
 print(string.format("记录结束时间: %.4f", endtime));
 print(string.format("消耗的时间: %.4f", endtime - starttime));
 

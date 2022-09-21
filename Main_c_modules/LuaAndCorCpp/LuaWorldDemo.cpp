@@ -48,7 +48,7 @@ int client(int var) {
 
 int main() {
     //mingw 编译器下,utf-8下 代码中加入 system(“chcp 65001”) 防止中文代码
-//    system("chcp 65001");
+    system("chcp 65001");
 
     //int p = client(10);
 
@@ -57,7 +57,7 @@ int main() {
     //1.创建一个state
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
-    int retLoad = luaL_loadfile(L, "D:\\CK\\Main_cpp_modules\\Main_c_modules\\MyLua\\MyLua3.lua");
+    int retLoad = luaL_loadfile(L, "D:\\Users\\XMZR\\CLionProjects\\Splicing-bit-fragments\\Main_c_modules\\MyLua\\MyLua3.lua");
     if (retLoad == 0) {//文件是否加载成功
         printf("load file success retLoad:%d\n", retLoad);
     }

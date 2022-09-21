@@ -4,11 +4,13 @@
 #include "lua/lua.h"
 #include "lua/lualib.h"
 #include "lua/lauxlib.h"
+#include <stdlib.h>
 
 int main() {
+    system("chcp 65001");
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
-    int retLoad = luaL_loadfile(L, "D:\\CK\\Main_cpp_modules\\Main_c_modules\\MyLua\\MyLua1.lua");
+    int retLoad = luaL_loadfile(L, "D:\\Users\\XMZR\\CLionProjects\\Splicing-bit-fragments\\Main_c_modules\\MyLua\\MyLua1.lua");
     if (retLoad == 0)
     {
         printf("load file success retLoad:%d\n", retLoad);

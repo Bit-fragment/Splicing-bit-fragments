@@ -5,9 +5,9 @@
 #ifndef MYCWORKD_LUACPPDEMO_H
 #define MYCWORKD_LUACPPDEMO_H
 extern "C" {
-#include "lua.h"
-#include "lualib.h"
-#include "lauxlib.h"
+#include "lua/lua.h"
+#include "lua/lualib.h"
+#include "lua/lauxlib.h"
 };
 
 //int Add(lua_State *L) {

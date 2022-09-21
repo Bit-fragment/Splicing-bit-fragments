@@ -3,9 +3,9 @@
 //
 #include <stdio.h>
 #include <malloc.h>
-#include "lua.h"
-#include "lualib.h"
-#include "lauxlib.h"
+#include "lua/lua.h"
+#include "lua/lualib.h"
+#include "lua/lauxlib.h"
 #define Number 10
 #define Mychar "How much time do you have?\n"
 
