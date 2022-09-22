@@ -6,5 +6,6 @@
 
 int FunctionDemo2::Dao1(int var) {
     std::cout << "int FunctionDemo2::Dao1(int var)接收到的var值为:" << var << std::endl;
-    return 0;
+    var += 10;
+    return var;
 }

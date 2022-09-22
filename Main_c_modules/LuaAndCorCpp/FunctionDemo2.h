@@ -7,6 +7,7 @@
 
 
 class FunctionDemo2 {
+public:
     FunctionDemo2() = default;
     ~FunctionDemo2() = default;
     int Dao1(int var);

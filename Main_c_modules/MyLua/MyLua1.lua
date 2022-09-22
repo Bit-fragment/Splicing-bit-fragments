@@ -4,17 +4,13 @@
 --- DateTime: 2022/8/30 14:07
 ---
 
-print("hello lua world")
-
+print("Hello Lua World")
 function f(value)
     if value <= 1 then
         return 1
     end
     return f(value - 1) + value
 end
-print(f(10))
-
-list = { 1, 23, 4, 2, 5, 4, 6 }
 function f2(list)
     for i = 1, #list - 1 do
         for p = i + 1, #list do
@@ -27,17 +23,18 @@ function f2(list)
     end
     return list
 end
-
 function cout(list)
     s = ""
     for i = 1, #list do
         s = s .. list[i] .. " "
     end
-    print(s)
+    return s
 end
 
-cout(list)
-cout(f2(list))
+list = { 6, 13, 4, 9, 5, 2, 7 }
+print("从1加到10: "..f(10))
+print("排序前: "..cout(list))
+print("排序后: "..cout(f2(list)))
 
 table = {
     "wenhao",
@@ -50,5 +47,6 @@ table = {
         }
     }
 }
+print("table[3][2][1] : "..table[3][2][1]);
 
-print(table[3][2][1]);
+name = "wenhao" age = 128

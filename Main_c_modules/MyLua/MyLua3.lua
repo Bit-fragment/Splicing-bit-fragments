@@ -3,4 +3,39 @@
 --- Created by XMZR.
 --- DateTime: 2022/9/19 8:40
 ---
+print("Hello Lua World --3")
 
+function f3()
+    print("调用c/c++函数得出的值: " .. sayHello("Hunter"))
+end
+f3()
+function f1(var)
+    if var <= 1 then
+        return 1
+    end
+    return f1(var - 1) + var
+end
+function f2(list)
+    for i = 1, #list - 1 do
+        for j = i + 1, #list do
+            if list[i] > list[j] then
+                var3 = list[i]
+                list[i] = list[j]
+                list[j] = var3
+            end
+        end
+    end
+    return list
+end
+function List_toStr(list)
+    s = ""
+    for i = 1, #list do
+        s = s .. list[i] .. " "
+    end
+    return s
+end
+
+--arrliy = { 9, 2, 1, 7, 4, 8, 5, 6, 2, 0 }
+--print(f1(10))
+--print(List_toStr(arrliy))
+--print(List_toStr(f2(arrliy)))

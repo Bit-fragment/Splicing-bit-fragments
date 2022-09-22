@@ -65,21 +65,31 @@ int main() {
         printf("error %s\n", lua_tostring(L, -1));
         return -1;
     }
-    //2.入栈操作
-    lua_pushstring(L, "I am so cool~");
+    //调用函数,依次压入参数
+    lua_getglobal(L, "f1");
+    lua_pushnumber(L, 10);
     lua_pushnumber(L, 20);
-
-    cout << lua_tostring(L, 1) << endl;
-    cout << lua_tonumber(L, 2) << endl;
-    //3.取值操作
-//    if (lua_isstring(L, 1)) {             //判断是否可以转为string
-//        cout << lua_tostring(L, 1) << endl;  //转为string并返回
-//    }
-//    if (lua_isnumber(L, 2)) {
-//        cout << lua_tonumber(L, 2) << endl;
-//    }
-
-    //4.关闭state
+    //查看压入栈的元素
+    for (int i=1;i<3;i++)
+    {
+        printf("number:%f\n",lua_tonumber(L, -i));
+    }
+    //lua_pcall(L,2,1,0):传入两个参数 期望得到一个返回值，0表示错误处理函数在栈中的索引值，压入结果前会弹出函数和参数
+    int pcallRet = lua_pcall(L, 2, 1, 0); //lua_pcall将计算好的值压入栈顶,并返回状态值
+    if (pcallRet != 0)
+    {
+        printf("error %s\n", lua_tostring(L, -1));
+        return -1;
+    }
+    printf("pcallRet:%d\n", pcallRet);
+    int val = lua_tonumber(L, -1); //在栈顶取出数据
+    printf("val:%d\n", val);
+    lua_pop(L, -1); //弹出栈顶
+    //再次查看栈内元素，发现什么都没有，因为lua在返回函数计算值后会清空栈,只保留返回值
+    for (int i=1;i<3;i++)
+    {
+        printf("number:%f\n",lua_tonumber(L, -i));
+    }
     lua_close(L);
 
     return 0;
