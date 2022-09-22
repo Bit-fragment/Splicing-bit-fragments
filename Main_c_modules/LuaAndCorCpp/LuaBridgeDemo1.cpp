@@ -7,18 +7,18 @@
 template<typename R, typename T1, typename T2>
 R call(lua_State* lua_state,const char* name, T1 arg1, T2 arg2)
 {
-//读取方法名
+    //读取方法名
     lua_getglobal(lua_state, name);
-//判断是不是方法
+    //判断是不是方法
     if (lua_isfunction(lua_state, -1))
     {
-//压入参数
+    //压入参数
         luabridge::Stack<T1>::push(lua_state, arg1);
         luabridge::Stack<T2>::push(lua_state, arg2);
-//执行函数（参数为lua对象、参数个数，返回值个数，出错返回）
+    //执行函数（参数为lua对象、参数个数，返回值个数，出错返回）
         lua_pcall(lua_state, 2, 1, 0);
     }
-//获取返回值
+    //获取返回值
     return luabridge::Stack<R>::get(lua_state, -1);
 }
 

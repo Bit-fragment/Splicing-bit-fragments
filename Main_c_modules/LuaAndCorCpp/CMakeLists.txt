@@ -22,6 +22,8 @@ add_executable(FunctionDemo1 FunctionDemo1.cpp FunctionDemo1.h )
 
 add_executable(LuaBridgeDemo1 LuaBridgeDemo1.cpp LuaBridgeDemo1.h)
 
+
+
 target_link_libraries(LuaBridgeDemo1 liblua.a lua.lib)
 
 target_link_libraries(FunctionDemo1 liblua.a lua.lib)
