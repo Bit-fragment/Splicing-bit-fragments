@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="远程主机 (a7ceef88-f75b-49ca-a102-0d839792333a)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.sTuS5H1h5K" local="$PROJECT_DIR$/Main_cpp_modules/TemplatesAndGenericProgramming/ObjektpoolModular" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/Main_cpp_modules/TemplatesAndGenericProgramming/ObjektpoolModular/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
