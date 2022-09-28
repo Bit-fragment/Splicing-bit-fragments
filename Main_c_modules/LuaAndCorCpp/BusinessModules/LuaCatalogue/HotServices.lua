@@ -8,10 +8,8 @@
 -- 打印当前默认的用于搜索.lua文件的路径
 --print(package.path)
 --package.path = package.path..";/D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
---print(package.path)
-
---local algorithm = require("algorithm")
---print(algorithm.f1(20))
+--algorithm = require("algorithm.lua")
+--print("累加和: "..algorithm:f1_taleb(100))
 
 --lua 打印lua script
 print("=======执行 HotServices (Lua脚本)=======")

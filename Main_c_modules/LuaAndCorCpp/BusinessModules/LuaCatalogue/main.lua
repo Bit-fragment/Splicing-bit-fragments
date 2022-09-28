@@ -4,10 +4,22 @@
 --- DateTime: 2022/9/28 14:48
 ---
 
+print("Lua Main is runing....")
 package.path = package.path..";/D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
+function printf(list)
+    s = ""
+    for i = 1, #list do
+        s = s .. list[i] .. " "
+    end
+    return s
+end
 
---local a = dofile("D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/algorithm.lua")
-local a = require("algorithm")
-print(a.var)
+algorithm = dofile("algorithm.lua")
+print("累加和: "..algorithm:f1_taleb(100))
+
+list = {9,5,1,6,2,7,3}
+print("排序前: "..printf(list))
+algorithm:f2_taleb(list)
+print("排序后: "..printf(list))
 
 
