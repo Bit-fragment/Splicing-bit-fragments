@@ -46,9 +46,9 @@ int main() {
     //创建test_lua对象
     test_lua test;
     luabridge::setGlobal(lua_state, &test, "test_lua");//注册test_lua对象到lua
-
+    const char *url = "D:\\Users\\XMZR\\CLionProjects\\Splicing-bit-fragments\\Main_c_modules\\LuaAndCorCpp\\lua_src\\LuaBirdgeDemo1Test1.lua";
     //运行lua脚本
-    luaL_dofile(lua_state, "D:\\Users\\XMZR\\CLionProjects\\Splicing-bit-fragments\\Main_c_modules\\LuaAndCorCpp\\lua_src\\LuaBirdgeDemo1Test1.lua");
+    luaL_dofile(lua_state, url);
 
     //调用lua方法lua_add_function
     int ret = call<int>(lua_state,"lua_add_function", 5, 6);
