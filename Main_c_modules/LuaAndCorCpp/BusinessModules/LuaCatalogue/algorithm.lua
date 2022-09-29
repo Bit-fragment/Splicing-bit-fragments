@@ -24,6 +24,7 @@ function f2(list)
 end
 
 
+
 local MethodList = {}
 function MethodList:f1_taleb(var)
     return f1(var)

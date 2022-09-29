@@ -5,7 +5,7 @@
 ---
 
 print("Lua Main is runing....")
-package.path = package.path..";/D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
+package.path = package.path..";D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
 function printf(list)
     s = ""
     for i = 1, #list do
@@ -14,12 +14,19 @@ function printf(list)
     return s
 end
 
-algorithm = dofile("algorithm.lua")
-print("累加和: "..algorithm:f1_taleb(100))
+--algorithm = dofile("algorithm.lua")
+algorithm = require("algorithm")
 
+local MethodList = {}
+function MethodList:f1()
+    print("累加和: "..algorithm:f1_taleb(100))
+end
+function MethodList:f2()
 list = {9,5,1,6,2,7,3}
 print("排序前: "..printf(list))
 algorithm:f2_taleb(list)
 print("排序后: "..printf(list))
+end
 
+return MethodList
 

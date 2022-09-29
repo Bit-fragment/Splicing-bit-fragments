@@ -51,8 +51,11 @@ int main() {
     luabridge::setGlobal(lua_state, &hotServices, "HotServices");//注册HotServices对象到lua
 
     const char *url = "D:\\Users\\XMZR\\CLionProjects\\Splicing-bit-fragments\\Main_c_modules\\LuaAndCorCpp\\BusinessModules\\LuaCatalogue\\HotServices.lua";
+
     //运行lua脚本
+    printf("%s\\n", lua_tostring(lua_state, -1));
     luaL_dofile(lua_state, url);
+    printf("%s\\n", lua_tostring(lua_state, -1));
 
     //调用lua方法lua_add_function
     int ret = call<int>(lua_state, "lua_add_function", 5, 6);
@@ -62,8 +65,8 @@ int main() {
     std::string value = call<const char *>(lua_state, "lua_add_str_function", "5", "6");
     printf("C++调用Lua中的方法: lua_add_str_function() 返回值为: %s\n", value.c_str());
 
-    int var = call<int>(lua_state,"fff",100,0);
-    printf("%d",var);
+    int var = call<int>(lua_state, "fff", 100, 0);
+    printf("%d", var);
 
     //关闭Lua
     lua_close(lua_state);
