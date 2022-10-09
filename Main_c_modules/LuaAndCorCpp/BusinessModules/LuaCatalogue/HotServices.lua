@@ -7,7 +7,7 @@
 --print(package.cpath)
 -- 打印当前默认的用于搜索.lua文件的路径
 --print(package.path)
-package.path = package.path..";D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
+package.path = package.path .. ";D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/LuaAndCorCpp/BusinessModules/LuaCatalogue/?.lua"
 LuaMain = require("main")
 LuaMain:f1()
 LuaMain:f2()
@@ -15,7 +15,7 @@ LuaMain:f2()
 --lua 打印lua script
 print("=======执行 HotServices (Lua脚本)=======")
 --调用成员变量m_test_string(test_str为注册的名字)
-print("C++中的 HotServices.HotServices_string1 "..HotServices.test_str)
+print("C++中的 HotServices.HotServices_string1 " .. HotServices.test_str)
 
 --调用c++静态变量（需要加上test命名空间）
 test.HotServices.static_data = 12
@@ -60,6 +60,6 @@ function fff(var)
     if 1 >= var then
         return 1
     end
-    return fff(var-1)+var;
+    return fff(var - 1) + var;
 end
 print("=======结束 HotServices (Lua脚本)=======")
