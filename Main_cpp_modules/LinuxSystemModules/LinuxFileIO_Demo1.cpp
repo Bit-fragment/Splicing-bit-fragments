@@ -4,31 +4,23 @@
 
 #include "LinuxFileIO_Demo1.h"
 
-int main() {
-    /*O_RDONLY、O_WRONL、O_RDWR：只读、只写、读写模式*/
-    int fd = open("/home/xmzr/test_text.txt", O_RDONLY);
-    if (fd == -1) {
-        printf("error!");
-        return fd;
-    }
-    printf("状态码:%d\n", fd);
+using namespace std;
 
-    unsigned long buf;
-//    ssize_t nr;
-//    nr = read(fd, &word, sizeof(unsigned long));
-//    if (nr == -1)printf("error");
-    size_t len = sizeof(unsigned long);
-    ssize_t ret;
-    while (len != 0 && (ret = read(fd, &buf, len)) != 0) {
-        if (ret == -1) {
-            if (errno == EINTR)
-                continue;
-            perror("read");
-            break;
-        }
-        len -= ret;
-        buf += ret;
-    }
-    printf("%lu",buf);
+int main() {
+
+    int openFile = open("/home/xmzr/test_text.txt", O_RDONLY);
+    printf("文件打开后的状态码:%d\n",openFile);
+
+    char buffer[1024];
+    ssize_t numRead;
+    numRead = read(openFile, buffer, 1024);
+    if (numRead == -1)
+        printf("打开文件失败");
+    buffer[numRead] = '\0';
+
+    printf("读取的文件内容:\n%s", buffer);
+
+    int closeFile = close(openFile);
+    printf("文件关闭后的状态码:%d",closeFile);
     return 0;
 }
