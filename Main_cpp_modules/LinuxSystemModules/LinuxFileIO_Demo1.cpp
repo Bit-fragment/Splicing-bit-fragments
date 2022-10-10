@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-    int openFile = open("/home/xmzr/test_text.txt", O_RDONLY);
+    /*int openFile = open("/home/xmzr/test_text.txt", O_RDONLY);
     printf("文件打开后的状态码:%d\n",openFile);
 
     char buffer[1024];
@@ -21,6 +21,10 @@ int main() {
     printf("读取的文件内容:\n%s", buffer);
 
     int closeFile = close(openFile);
-    printf("文件关闭后的状态码:%d",closeFile);
+    printf("文件关闭后的状态码:%d",closeFile);*/
+    File file = File("/home/xmzr/test_text.txt");
+    string body = file.getFileBody();
+
+    cout << "读取的内容:\n" << body;
     return 0;
 }
