@@ -22,8 +22,8 @@ int main() {
 
     int closeFile = close(openFile);
     printf("文件关闭后的状态码:%d",closeFile);*/
-    File file = File("/home/xmzr/test_text.txt");
-    string body = file.getFileBody();
+    MyFile file = MyFile("/home/xmzr/test_text.txt");
+    string body = file.getMyFileBody();
 
     cout << "读取的内容:\n" << body;
     return 0;
