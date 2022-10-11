@@ -48,7 +48,7 @@ MyFile::MyFile() {
 }
 
 MyFile::MyFile(const std::string &url) {
-    int openType = open(this->url, O_RDONLY);
+    int openType = open(url.data(), O_RDONLY);
     if (openType != -1) {
         this->url = url.data();
         this->openMyFile = openType;
