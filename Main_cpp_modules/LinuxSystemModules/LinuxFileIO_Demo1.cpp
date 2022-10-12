@@ -27,8 +27,9 @@ int main() {
     string body = file.getMyFileBody();
 
     cout << "读取的内容:\n" << body;*/
+
     /*https://zhuanlan.zhihu.com/p/346402794*/
-    FILE *file = fopen("/home/xmzr/test_text.txt", "a+");
+    /*FILE *file = fopen("/home/xmzr/test_text.txt", "a+");
     int p = 1;
     vector<char> list;
     while (p) {
@@ -39,6 +40,20 @@ int main() {
     }
     cout << list.data() << endl;
     int type = fclose(file);
-    printf("关闭文件:%d", type);
+    printf("关闭文件:%d", type);*/
+
+    DIR *dir = opendir("/home/xmzr/");
+    int ty = 1;
+    while (ty) {
+        dirent *dirList = readdir(dir);
+        if (dirList != NULL) {
+            printf("\n%s", dirList->d_name);
+        } else {
+            ty = 0;
+        }
+    }
+    int t1 = closedir(dir);
+    printf("\n%d", t1);
+
     return 0;
 }
