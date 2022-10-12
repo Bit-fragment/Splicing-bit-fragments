@@ -3,6 +3,8 @@
 //
 
 #include "LinuxFileIO_Demo1.h"
+#include <stdio.h>
+#include <vector>
 
 using namespace std;
 
@@ -22,9 +24,24 @@ int main() {
 
     int closeFile = close(openFile);
     printf("文件关闭后的状态码:%d",closeFile);*/
-    MyFile file = MyFile("/home/xmzr/test_text.txt");
+
+    /*MyFile file = MyFile("/home/xmzr/test_text.txt");
     string body = file.getMyFileBody();
 
-    cout << "读取的内容:\n" << body;
+    cout << "读取的内容:\n" << body;*/
+
+    /*https://zhuanlan.zhihu.com/p/346402794*/
+    FILE *file = fopen("/home/xmzr/test_text.txt", "a+");
+    int p = 1;
+    vector<char> list;
+    while (p) {
+        list.push_back(getc(file));
+        if (feof(file)) {
+            p = 0;
+        }
+    }
+    cout << list.data() << endl;
+    int type = fclose(file);
+    printf("关闭文件:%d", type);
     return 0;
 }

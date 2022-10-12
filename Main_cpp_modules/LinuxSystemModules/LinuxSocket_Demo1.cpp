@@ -21,53 +21,19 @@ void byteorder() {
     } test;
     test.value = 0x0102;
     if ((test.union_bytes[0] == 1) && (test.union_bytes[1] == 2)) {
-        printf("big endian 大端字节序\n");
+        printf("\nbig endian 大端字节序");
     } else if ((test.union_bytes[0] == 2) && (test.union_bytes[1] == 1)) {
-        printf("little endian 小端字节序\n");
+        printf("\nlittle endian 小端字节序");
     } else {
-        printf("unknown...\n");
+        printf("\nunknown...");
     }
 }
 
-static bool stop = false;
+int main() {
+    FILE file;
 
-static void handle_term(int sig) {
-    stop = true;
-}
-
-int main(int argc, char *argv[]) {
+    std::cout << "Hello world" << std::endl;
     byteorder();
-    signal(SIGTERM, handle_term);
-    if (argc <= 3) {
-        printf("usage:%s ip_address port_number backlog\n",
-               basename(argv[0]));
-        return 1;
-    }
-    const char *ip = argv[1];
-    int port = atoi(argv[2]);
-    int backlog = atoi(argv[3]);
 
-    int sock = socket(PF_INET, SOCK_STREAM, 0);
-    assert(sock >= 0);
-
-    /*创建一个IPv4 socket地址*/
-    struct sockaddr_in address;
-    bzero(&address, sizeof(address));
-    address.sin_family = AF_INET;
-    inet_pton(AF_INET, ip, &address.sin_addr);
-    address.sin_port = htons(port);
-
-    int ret = bind(sock, (struct sockaddr *) &address, sizeof(address));
-    assert(ret != -1);
-
-    ret = listen(sock, backlog);
-    assert(ret != -1);
-
-    /*循环等待连接，直到有SIGTERM信号将他中断*/
-    while (!stop) {
-        sleep(1);
-    }
-    /*关闭socket,见后文*/
-    close(sock);
     return 0;
 }
