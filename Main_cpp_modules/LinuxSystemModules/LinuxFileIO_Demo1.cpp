@@ -9,7 +9,6 @@
 using namespace std;
 
 int main() {
-
     /*int openFile = open("/home/xmzr/test_text.txt", O_RDONLY);
     printf("文件打开后的状态码:%d\n",openFile);
 
@@ -24,12 +23,10 @@ int main() {
 
     int closeFile = close(openFile);
     printf("文件关闭后的状态码:%d",closeFile);*/
-
     /*MyFile file = MyFile("/home/xmzr/test_text.txt");
     string body = file.getMyFileBody();
 
     cout << "读取的内容:\n" << body;*/
-
     /*https://zhuanlan.zhihu.com/p/346402794*/
     FILE *file = fopen("/home/xmzr/test_text.txt", "a+");
     int p = 1;
