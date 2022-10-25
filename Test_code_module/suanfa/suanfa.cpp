@@ -32,7 +32,7 @@ void f1(int *pi) {
 
 int main() {
 //    printf("hello suanfa");
-    system("chcp 65001");
+//    system("chcp 65001");
 
     int list[size] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
     auto *list_pi = list;

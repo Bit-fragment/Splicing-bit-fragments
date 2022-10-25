@@ -2,13 +2,14 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="远程主机 (a7ceef88-f75b-49ca-a102-0d839792333a)">
+      <paths name="远程主机 (9221e753-f78d-4b35-838a-bd660f129ca1)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.sTuS5H1h5K" local="$PROJECT_DIR$/Main_cpp_modules/TemplatesAndGenericProgramming/ObjektpoolModular" />
+            <mapping deploy="/tmp/tmp.4ohlAGTYG1" local="$PROJECT_DIR$/Test_code_module/suanfa" />
           </mappings>
           <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/Main_cpp_modules/TemplatesAndGenericProgramming/ObjektpoolModular/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/Test_code_module/suanfa/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/Main_cpp_modules/LinuxSystemModules/cmake-build-debug" />
           </excludedPaths>
         </serverdata>
       </paths>
