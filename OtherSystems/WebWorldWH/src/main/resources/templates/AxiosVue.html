@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="huoqu()">获取数据</button>
+    <table border="1">
+        <tr>
+            <td>昵称</td>
+            <td>账号</td>
+            <td>密码</td>
+            <td>余额</td>
+        </tr>
+        <tr v-for="(user, index) in lists" :key="index">
+            <td>{{user.name}}</td>
+            <td>{{user.account}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.balance}}</td>
+        </tr>
+    </table>
+
+    <p v-on:click="app.getFileNameList">获取文件列表</p>
+    <P v-for="(item , key) in app.fileNameList" :key="key">
+        {{item}}
+    </P>
+
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el: "#app",
+        data: {
+            lists: [],
+            fileNameList: [""],
+        },
+        methods: {//方法必须定义在vue的 methods对象中 v-on绑定事件
+            huoqu: function(){
+                axios.post("/user/he").then(res => {
+                    console.log(res);
+                    //将数据赋值到vue实例中的数据属性users；
+                    //不能使用this，在axios回调函数中表示窗口，不是vue实例
+                    app.lists = res.data;
+                }).catch(err => alert(err));
+            },
+
+            getFileNameList: function (){
+                axios.post("/user/xiazai").then(res => {
+                    console.log(res);
+                    //将数据赋值到vue实例中的数据属性users；
+                    //不能使用this，在axios回调函数中表示窗口，不是vue实例
+                    app.fileNameList = JSON.parse(res.data);
+                }).catch(err => alert(err));
+            },
+
+        }
+    });
+
+</script>
+</body>
+</html>

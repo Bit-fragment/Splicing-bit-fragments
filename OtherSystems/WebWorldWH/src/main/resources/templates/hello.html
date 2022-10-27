@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div id="app">
+
+    <form id="loginform" @submit.prevent="login">
+        账号:<input type="text" v-model="username">{{username}}<br/>
+        密码:<input type="password" v-model="password">{{password}}</br>
+        <input type="submit" value="登录">{{xiaoxi}}
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: "#app",
+        data: {
+            username: "",
+            password: "",
+            xiaoxi: ""
+        },
+        methods: {//方法必须定义在vue的 methods对象中 v-on绑定事件
+            login: function () {
+                let formData = new FormData();
+                formData.append('username', this.username);
+                formData.append('password', this.password);
+                axios.post("/jc/amptest", formData).then(res => {
+
+                }).catch(err => alert(err));
+            },
+        }
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wh.mode.mapper.FileilMapper">
+
+    <resultMap id="BaseResultMap" type="cn.wh.mode.pojo.Fileil">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+            <result property="fileSuffix" column="file_suffix" jdbcType="VARCHAR"/>
+            <result property="fileUrl" column="file_url" jdbcType="VARCHAR"/>
+            <result property="fileSize" column="file_size" jdbcType="BIGINT"/>
+            <result property="fileRemarks" column="file_remarks" jdbcType="VARCHAR"/>
+            <result property="storageDate" column="storage_date" jdbcType="TIMESTAMP"/>
+            <result property="lastUpdated" column="Last_updated" jdbcType="TIMESTAMP"/>
+            <result property="ueserId" column="ueser_id" jdbcType="INTEGER"/>
+            <result property="fileState" column="file_state" jdbcType="INTEGER"/>
+            <result property="fileCost" column="file_cost" jdbcType="BIGINT"/>
+            <result property="deleteType" column="delete_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,file_name,file_suffix,
+        file_url,file_size,file_remarks,
+        storage_date,Last_updated,ueser_id,
+        file_state,file_cost,delete_type
+    </sql>
+    <select id="getAllFile" resultType="cn.wh.mode.pojo.Fileil">
+        select * from fileil where delete_type = 0;
+    </select>
+    <select id="getAllByIdFileil" resultType="cn.wh.mode.pojo.Fileil">
+        select * from fileil where id=#{id} and delete_type =0;
+    </select>
+</mapper>

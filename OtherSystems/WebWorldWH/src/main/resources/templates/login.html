@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div id="app">
+
+    <form @submit.prevent="login">
+        输入昵称:<input type="text" v-model="name">{{name}}<br/>
+        输入账号:<input type="text" v-model="account">{{account}}<br/>
+        输入密码:<input type="password" v-model="password1">{{password1}}</br>
+        确认密码:<input type="text" v-model="password2">{{password2}}</br>
+        <input type="submit" value="注册">{{xiaoxi}}
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: "#app",
+        data: {
+            name: "",
+            account: "",
+            password1: "",
+            password2: "",
+            xiaoxi: ""
+        },
+        methods: {//方法必须定义在vue的 methods对象中 v-on绑定事件
+            login: function () {
+                let formData = new FormData();
+                formData.append('name', this.name);
+                formData.append('account', this.account);
+                formData.append('password1', this.password1);
+                formData.append('password2', this.password2);
+                axios.post("/user/loginuser", formData).then(res => {
+                    console.log(res);
+                    if (res.data) {
+                        app.xiaoxi = "注册成功!"
+                    } else {
+                        app.xiaoxi = "注册失败!"
+                    }
+                    //将数据赋值到vue实例中的数据属性users；
+                    //不能使用this，在axios回调函数中表示窗口，不是vue实例
+                    // app.lists = res.data;
+                }).catch(err => alert(err));
+            },
+
+        }
+
+    });
+
+</script>
+</body>
+</html>

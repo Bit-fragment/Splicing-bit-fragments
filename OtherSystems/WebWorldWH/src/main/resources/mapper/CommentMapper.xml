@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wh.mode.mapper.CommentMapper">
+
+    <resultMap id="BaseResultMap" type="cn.wh.mode.pojo.Comment">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="objectId" column="object_id" jdbcType="BIGINT"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="commentId" column="comment_id" jdbcType="BIGINT"/>
+            <result property="likeNumber" column="like_number" jdbcType="BIGINT"/>
+            <result property="comments" column="comments" jdbcType="VARCHAR"/>
+            <result property="issuingTime" column="issuing_time" jdbcType="TIMESTAMP"/>
+            <result property="logicalDeletion" column="logical_deletion" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,object_id,
+        article_id,comment_id,like_number,
+        comments,issuing_time,logical_deletion
+    </sql>
+    <select id="getCommentListById" resultType="cn.wh.mode.pojo.Comment">
+        select * from comment as a inner join (select id from comment where article_id=#{id} order by id limit #{m}, #{n}) as b on a.id = b.id order by a.id;
+    </select>
+
+
+</mapper>

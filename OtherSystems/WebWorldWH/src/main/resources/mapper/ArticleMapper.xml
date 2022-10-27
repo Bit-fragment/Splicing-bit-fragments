@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wh.mode.mapper.ArticleMapper">
+
+    <resultMap id="BaseResultMap" type="cn.wh.mode.pojo.Article">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="articleTitle" column="article_title" jdbcType="VARCHAR"/>
+            <result property="articleSynopsis" column="article_synopsis" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="txtUrl" column="txt_url" jdbcType="VARCHAR"/>
+            <result property="issuingTime" column="issuing_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="likeNumber" column="like_number" jdbcType="BIGINT"/>
+            <result property="favoritesNumber" column="favorites_number" jdbcType="BIGINT"/>
+            <result property="commentsNumber" column="comments_number" jdbcType="BIGINT"/>
+            <result property="logicalDeletion" column="logical_deletion" jdbcType="INTEGER"/>
+            <result property="userType" column="user_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,article_title,article_synopsis,
+        user_id,txt_url,issuing_time,
+        update_time,like_number,favorites_number,
+        comments_number,logical_deletion,user_type
+    </sql>
+    <update id="updateCommentsNumber">
+        update article set comments_number=comments_number+1 where id=#{id};
+    </update>
+    <select id="getArticleById" resultType="cn.wh.mode.pojo.Article">
+        select * from article where id=#{id} and logical_deletion=0
+    </select>
+    <select id="getArticleListById" resultType="cn.wh.mode.pojo.Article">
+        select * from article as a inner join (select id from article order by id limit #{m}, #{n}) as b on a.id = b.id order by a.id;
+    </select>
+    <select id="selectID" resultType="java.lang.Integer">
+        select count(*) from article where id=#{id};
+    </select>
+</mapper>
