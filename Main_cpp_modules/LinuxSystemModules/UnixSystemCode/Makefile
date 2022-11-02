@@ -1,7 +1,7 @@
 CPP_FLAGS='-std=c++17'
 
-main:UnixDemo1.h UnixDemo1.cpp
-	g++ ${CPP_FLAGS} -o main UnixDemo1.h UnixDemo1.cpp
+main:LinuxSystemCode.h main.cpp
+	g++ ${CPP_FLAGS} -o main LinuxSystemCode.h main.cpp
 
 #hello:hello.o
 #	gcc hello.o -o hello

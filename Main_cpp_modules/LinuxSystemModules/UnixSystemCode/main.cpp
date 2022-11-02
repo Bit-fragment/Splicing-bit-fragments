@@ -2,13 +2,13 @@
 // Created by 20106 on 2022/10/24.
 //
 
-#include "UnixDemo1.h"
+#include "LinuxSystemCode.h"
 
 using namespace std;
 
 int main() {
     printf("Hello Cpp World  你好！\n");
-    UnixDemo1 ud;
+    LinuxClass_1 ud;
     cout << "你好，新世界！" << ud.f1(100) << endl;
 
     int list_1[] = {9, 2, 1, 3, 5, 2, 0};

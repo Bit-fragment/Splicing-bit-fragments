@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="RemoteTargetsManager">
-    <option name="projectDefaultTargetUuid" value="3658dae2-65d2-48fd-b7a3-c8f0d2f5078c" />
+    <option name="projectDefaultTargetUuid" value="237880df-bd4e-41b2-b025-333fb7cd1017" />
     <targets>
-      <target name="WSL - Ubuntu-20.04" type="wsl" uuid="3658dae2-65d2-48fd-b7a3-c8f0d2f5078c">
+      <target name="WSL - Ubuntu-20.04" type="wsl" uuid="237880df-bd4e-41b2-b025-333fb7cd1017">
         <config>
           <option name="distributionMsId" value="Ubuntu-20.04" />
-          <option name="projectRootOnTarget" value="/mnt/d/Program Files/JetBrains/CLion 2022.1.3/jbr/bin&#10;/TemplateMode" />
+          <option name="projectRootOnTarget" value="/mnt/d/Program Files/JetBrains/CLion 2022.2.4/jbr/bin&#10;/Splicing-bit-fragments" />
         </config>
       </target>
     </targets>
