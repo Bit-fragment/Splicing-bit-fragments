@@ -1,19 +1,11 @@
 CPP_FLAGS='-std=c++17'
 
-main:LinuxSystemCode.h main.cpp
-	g++ ${CPP_FLAGS} -o main LinuxSystemCode.h main.cpp
+#main:LinuxSystemCode.h main.cpp
+#	g++ ${CPP_FLAGS} -o main LinuxSystemCode.h main.cpp
 
-#hello:hello.o
-#	gcc hello.o -o hello
-#
-#hello.o:hello.S
-#	gcc -c hello.S -o hello.o
-#
-#hello.S:hello.i
-#	gcc -S hello.i -o hello.S
-#
-#hello.i:hello.c
-#	gcc -E hello.c -o hello.i
-#.PHONY:
-#clear:
-#	rm hello.o hello.S hello.i
+
+server: TCP_Servicer_demo1.cpp
+	g++  ${CPP_FLAGS} -o server TCP_Servicer_demo1.cpp
+
+client: TCP_Client_demo1.cpp
+	g++  ${CPP_FLAGS} -o server TCP_Client_demo1.cpp
