@@ -3,48 +3,47 @@
 // c语言初识
 //
 #include <stdio.h>
-#include "myc.h"
 
 int f1(int var) {
-    if (var <= 1) {
-        return 1;
-    }
+    if (var <= 1)return 1;
     return f1(var - 1) + var;
 }
 
-void f2(int *pi,int size){
-    for (int i = 0; i < size-1; i++) {
-        for (int j = i+1; j <= size-1; j++) {
-            if(pi[i]>pi[j]){
-                int var = pi[i];
-                pi[i] = pi[j];
-                pi[j] = var;
+
+void f2(int num[], int count) {
+    int i, j;
+    for (i = 1; i < count; i++) {
+        if (num[i] < num[i - 1]) {
+            int temp = num[i];
+            int left = 0, right = i - 1;
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                if (num[mid] < temp) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
+            //只是比较次数变少了，交换次数还是一样的
+            for (j = i; j > left; j--) {
+                num[j] = num[j - 1];
+            }
+            num[left] = temp;
         }
     }
 }
 
 int main() {
-    test();
-    printf("hello c world\n");
-    printf("value_int = %d\n", f1(10));
-
-    int list[] = {21, 9, 6, 8, 3, 52, 1};
-    int *pi = &list;
-    printf("*pi = %d\n&pi = %d\npi[1] = %d\n", *pi,&pi,pi[1]);
-    printf("sizeof(list)/4 = %d\n", sizeof(list)/4);
-    printf("sizeof(pi) = %d\n", sizeof(pi));
-    printf("sizeof(*pi) = %d\n", sizeof(*pi));
-    int list_size = sizeof(list)/4;
-
-    printf("Before sorting:");
-    for (int i = 0; i < list_size; ++i) {
-        printf(" %d",pi[i]);
+    printf("%d", 1 / 2);
+    int list[] = {9, 5, 3, 27, 32, 12, 5};
+    printf("\n");
+    for (int i = 0; i < sizeof(list) / sizeof(int); i++) {
+        printf("%d ", list[i]);
     }
-    f2(pi,list_size);
-    printf("\nAfter sorting:");
-    for (int i = 0; i < list_size; ++i) {
-        printf(" %d",pi[i]);
+    f2(list, sizeof(list) / sizeof(int));
+    printf("\n");
+    for (int i = 0; i < sizeof(list) / sizeof(int); i++) {
+        printf("%d ", list[i]);
     }
     return 0;
 }
