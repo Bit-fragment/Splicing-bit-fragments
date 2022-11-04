@@ -22,7 +22,7 @@ int main() {
 
     while (type) {
 //        rendering.everyFrame();
-        Sleep(10000);
+        Sleep(2000);
     }
 
 }
