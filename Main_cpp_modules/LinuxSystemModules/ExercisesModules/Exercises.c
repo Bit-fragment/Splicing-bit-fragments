@@ -33,6 +33,6 @@ int main() {
     //  ./emain
     f1();
     printf("===========\n");
-    f2();
+//    f2();
     exit(0);
 }

@@ -9,6 +9,12 @@
           <option name="projectRootOnTarget" value="/mnt/d/Program Files/JetBrains/CLion 2022.2.4/jbr/bin&#10;/Splicing-bit-fragments" />
         </config>
       </target>
+      <target name="root@127.0.0.1:8899" type="ssh/sftp" uuid="a00b9bcb-12fc-4d23-9138-ec3559219cbc">
+        <config>
+          <option name="projectRootOnTarget" value="/root/LinuxSystemModules" />
+          <option name="serverName" value="root@127.0.0.1:8899 password" />
+        </config>
+      </target>
     </targets>
   </component>
 </project>
