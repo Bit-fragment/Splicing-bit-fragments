@@ -9,8 +9,12 @@ int f1(int x, int y) {
     return x + y;
 }
 
-void f2(){
-    printf("hello");
+
+int getPrintf(const char *format, ...) {
+
+    return 0;
 }
+
+
 
 #endif //STRUCTURALMODE_MethodeList_H
