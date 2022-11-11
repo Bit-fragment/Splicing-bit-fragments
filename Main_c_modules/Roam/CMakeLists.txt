@@ -10,6 +10,8 @@ aux_source_directory(. DIR_SRCS)
 # 添加 major tool 子目录
 add_subdirectory(fog_a)
 # 指定生成目标
-add_executable(RoamingEingang main.c)
+#add_executable(RoamingEingang main.c)
+add_executable(RoamingEingang ${DIR_SRCS})
+
 # 添加链接库
 target_link_libraries(RoamingEingang fog_a)
