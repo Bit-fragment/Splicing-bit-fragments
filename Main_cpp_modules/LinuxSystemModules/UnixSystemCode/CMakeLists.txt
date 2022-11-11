@@ -9,3 +9,7 @@ add_executable(LinuxMain main.cpp LinuxSystemCode.h)
 add_executable(TCP_Servicer_demo1 TCP_Servicer_demo1.cpp)
 
 add_executable(TCP_Client_demo1 TCP_Client_demo1.cpp)
+
+link_libraries(TCP_Servicer_demo1 libunp.a)
+
+link_libraries(TCP_Client_demo1 libunp.a)

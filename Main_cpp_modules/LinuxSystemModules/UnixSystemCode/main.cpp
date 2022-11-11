@@ -3,11 +3,19 @@
 //
 
 #include "LinuxSystemCode.h"
+#include "apue.h"
 
 using namespace std;
 
 int main() {
-    printf("Hello Cpp World  你好！\n");
+
+    if(lseek(STDIN_FILENO,0,SEEK_CUR)==-1)
+        printf("cannot seek\n");
+    else
+        printf("seek OK\n");
+    exit(0);
+
+    /*printf("Hello Cpp World  你好！\n");
     LinuxClass_1 ud;
     cout << "你好，新世界！" << ud.f1(100) << endl;
 
@@ -28,6 +36,7 @@ int main() {
     for (auto var: list_2)
         cout << var << " ";
     cout << endl;
+*/
 
-    return 0;
+//    return 0;
 }

@@ -8,39 +8,42 @@
 #include "tool/WTool.h"
 #include "major/Rendering.cpp"
 #include "tool/ObjectPool.h"
-
+#include <windows.h>
 #include <pthread.h>
 
 using namespace std;
-class Test
-{
+
+class Test {
 public:
     Test() {}
+
     ~Test() {}
-    void Print()
-    {
+
+    void Print() {
         cout << "Test" << endl;
     }
 };
 
 int main() {
     OUTUPT_FORMATS
-//    World world;
-//    Object object = Object(&world);
-//    vector<Object *> list = {&object};
-//
-//    Rendering rendering = Rendering(&world, list);
-//    rendering.initialization();
-//
-//    while (type) {
-////        rendering.everyFrame();
+    World world;
+    Object object = Object(&world);
+    vector<Object *> list = {&object};
+
+    Rendering rendering = Rendering(&world, list);
+    rendering.initialization();
+
+    while (type) {
+//        rendering.everyFrame();
 //        Sleep(2000);
-//    }
+        Sleep(1);
+    }
+    return 0;
 
 
-    ObjectPool<Test> obj(10);
+    /*ObjectPool<Test> obj(10);
     obj.getSize();
-    Test* pA;
+    Test *pA;
 
     pA = obj.GetObject();
     pA->Print();
@@ -48,6 +51,6 @@ int main() {
 
     obj.ReturnObject(pA);
     obj.getSize();
-    return 0;
+    return 0;*/
 
 }

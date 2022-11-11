@@ -12,7 +12,7 @@
 template<class Object>
 class ObjectPool {
 public:
-    ObjectPool(size_t Size) {
+    explicit ObjectPool(size_t Size) {
         _nSize = Size;
         for (size_t n = 0; n < _nSize; n++) {
             _mPool.push_back(new Object());

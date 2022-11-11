@@ -10,6 +10,6 @@ aux_source_directory(. DIR_SRCS)
 add_subdirectory(major)
 add_subdirectory(tool)
 # 指定生成目标
-add_executable(MajorWorld main.cpp)
+add_executable(WorldSimulation main.cpp)
 # 添加链接库
-target_link_libraries(MajorWorld major tool)
+target_link_libraries(WorldSimulation major tool)

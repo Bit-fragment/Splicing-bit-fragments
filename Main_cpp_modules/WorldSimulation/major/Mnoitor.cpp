@@ -99,7 +99,7 @@ int MonitorKeyboard(Object *obj) {
             // 将消息分派给窗口程序
             DispatchMessageW(&msg);
         } else
-            Sleep(0);    //避免CPU全负载运行
+            Sleep(1);    //避免CPU全负载运行
     }
     // 删除钩子
     UnhookWindowsHookEx(keyboardHook);
