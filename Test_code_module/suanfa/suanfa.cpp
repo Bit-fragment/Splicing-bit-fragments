@@ -29,14 +29,20 @@ void f1(int *pi) {
     cout << endl;
 }
 
+auto f1(int value) {
+    return &value;
+}
+
+
 
 int main() {
-//    printf("hello suanfa");
-//    system("chcp 65001");
+    printf("hello suanfa");
+    system("chcp 65001");
 
     int list[size] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
     auto *list_pi = list;
     f1(list_pi);
+
 
     return 0;
 }

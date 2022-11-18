@@ -79,7 +79,6 @@ void SinginPage::function_login() {
         LonginPage p;
         p.show();
     };
-
     //这里有疑问
 
 }

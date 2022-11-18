@@ -5,15 +5,14 @@
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
-    QThread qThread;
-    qThread.
+//    QThread qThread;
+//    qThread.
 
+    Dialog dialog;
+    dialog.show();
 
-//    Dialog dialog;
-//    dialog.show();
-//
-//    SinginPage singinPage;
-//    singinPage.show();
+    SinginPage singinPage;
+    singinPage.show();
 
     return QApplication::exec();
 }
