@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 project(QTProject)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_PREFIX_PATH "C:/Qt/6.4.0/mingw_64")  # Qt 的安装路径
+set(CMAKE_PREFIX_PATH "D:/Qt/6.4.0/mingw_64")  # Qt 的安装路径
 
 add_subdirectory(WindowGUI)
 add_executable(QTProject main.cpp)
