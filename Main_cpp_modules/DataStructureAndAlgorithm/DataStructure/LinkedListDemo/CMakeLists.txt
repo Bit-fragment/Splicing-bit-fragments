@@ -5,6 +5,6 @@ project(DataStructureAndAlgorithm)
 set(CMAKE_CXX_STANDARD 14)
 
 #链表
-add_executable(MainDemo MainDemo.cpp LinkedListMy.cpp LinkedListMy.h)
+add_executable(MainDemo MainDemo.cpp LinkedListMy.hpp LinkedListMy.cpp )
 
 #add_executable(MainDemo MainDemo.cpp)
