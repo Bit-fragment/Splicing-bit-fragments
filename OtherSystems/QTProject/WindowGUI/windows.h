@@ -9,7 +9,7 @@
 #include <QDialog>
 #include <QLineEdit>
 #include <QPushButton>
-
+#include <QGridLayout>
 #include <QList>
 
 //class windows {

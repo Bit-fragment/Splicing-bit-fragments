@@ -6,6 +6,7 @@ find_package(Qt6 COMPONENTS     #查找Qt6的如下库
         Core
         Gui
         Widgets
+        Network
         REQUIRED)
 
 aux_source_directory(. DIR_LIB_SRCS)
@@ -16,4 +17,5 @@ target_link_libraries(WindowGUI     #链接Qt6的如下二进制库
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt::Network
         )

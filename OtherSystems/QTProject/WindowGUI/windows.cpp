@@ -2,7 +2,6 @@
 // Created by 20106 on 2022/11/15.
 //
 
-#include <QGridLayout>
 #include <QThread>
 #include "windows.h"
 
