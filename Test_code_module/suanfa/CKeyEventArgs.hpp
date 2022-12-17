@@ -11,4 +11,5 @@ class CKeyEventArgs {
 };
 
 
+
 #endif //SUANFA_CKEYEVENTARGS_HPP
