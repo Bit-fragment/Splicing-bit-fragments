@@ -1,0 +1,14 @@
+//
+// Created by 50838 on 2022/12/26.
+//
+
+#ifndef LINUXSYSTEMMODULES_SERVER_H
+#define LINUXSYSTEMMODULES_SERVER_H
+
+
+class server{
+
+};
+
+
+#endif //LINUXSYSTEMMODULES_SERVER_H
