@@ -11,6 +11,7 @@
 #include <QPushButton>
 #include <QGridLayout>
 #include <QList>
+#include <QTextEdit>
 
 //class windows {
 //
@@ -31,6 +32,24 @@ private:
 private slots:
 
     void showArea();
+};
+
+class Schedule : public QDialog {
+Q_OBJECT
+public:
+    explicit Schedule(QWidget *parent = nullptr);
+
+    ~Schedule() override;
+
+private:
+    QLabel *startDate, *endDate, *title, *concreteContent, *currentState, *completion, *remarks;
+    QLineEdit *InputStartDate, *InputEndDate, *InputTitle, *InputCurrentState, *InputCompletion, *InputRemarks;
+    QPushButton *SubmitButton, *EmptyButton{};
+    QTextEdit *InputConcreteContent;
+
+private slots:
+
+    static void Submit();
 };
 
 class SinginPage : public QDialog {
