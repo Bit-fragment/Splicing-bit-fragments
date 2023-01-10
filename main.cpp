@@ -4,13 +4,8 @@
 #include <thread>
 #include <array>
 #include <cstring>
-#include "main.h"
-#include "mode1/FileUtil.h"
-#include "mode1/Object.h"
 #include <fstream>
-#include "MyTextMode/MyList.h"
 #include "windows.h"
-#include "MyTextMode/MyException.h"
 
 using namespace std;
 
@@ -70,36 +65,10 @@ void wenhao(T value) {
     cout << typeid(value).name() << endl;
 }
 
-void whileRun(long i) {
-    AbstractClass *abc = (AbstractClass *) new MyClass_1(to_string(i));
-    AbstractClass *abc1 = (AbstractClass *) new MyClass_2(to_string(i));
-    abc->star();
-    abc1->star();
-    delete abc1;
-    delete abc;
-}
 
 int main() {
-    /*Object object;
-    FileUtil user;*/
 
-    /*MyList myList;
-    for (int i = 0; i < 20; ++i) {
-        myList.add(i);
-    }
-    cout << "myList size:" << myList.getSize() << endl;
-    for (int i = 0; i < myList.getSize(); ++i) {
-        cout << myList.get(i) << " ";
-    }
-    try {
-        cout << "\nBefore exception" << endl;
-        cout << "\n" << myList.get(21) << endl;
-        cout << "\nAfter exception" << endl;
-    } catch (const char *msg) {
-        cout << msg << endl;
-    }*/
-
-    /*int a = 1, b = -1;
+/*    int a = 1, b = -1;
     while (1) {
         Sleep(1000);
         try {
@@ -111,60 +80,6 @@ int main() {
             b < 0 ? b = 1 : b = -1;
         }
     }*/
-
-    /*try {
-        int b = 2, c = -2;
-        if (b + c == 0) {
-            throw Object();
-        }
-        int a = 1 / (b + c);
-        cout << "\n" << a << endl;
-    } catch (Object &p) {
-        cout << "\n" << p.f2(10) << endl;
-    }*/
-
-    /*int MyValue = 1;
-    while (1) {
-        Sleep(500);
-        try {
-            switch (MyValue) {
-                case 1:
-                    throw MyException();
-                case 2:
-                    throw MyException("MyException:My exception description");
-                case 3:
-                    throw Exception_1();
-                case 4:
-                    throw Exception_1("Exception_1:My exception description");
-                case 5:
-                    throw Exception_2("Exception_2:My exception description");
-                default:
-                    exit(0);
-            }
-        } catch (Exception_1 &e1) {
-            e1.output();
-        } catch (MyException &e) {
-            e.output();
-        } catch (...) {//捕获任何异常
-            cout << "Unknown exception" << endl;
-        }
-        MyValue++;
-    }*/
-
-    /*MyException *exp = new Exception_2();
-    MyException *exp1 = new Exception_1();
-    exp->output();
-    exp1->output();
-    delete exp1;
-    delete exp;*/
-
-    /*long i = 0;
-    while (1) {
-        i++;
-        whileRun(i);
-//        Sleep(50);
-    }*/
-
 
     /*int qwe[5];//数组与指针的关系
     int *pio = qwe;
