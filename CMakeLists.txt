@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16.3)
-project(MyCppWorld)
+
+project(Splicing-bit-fragments)
 
 set(CMAKE_CXX_STANDARD 14)
 
