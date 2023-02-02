@@ -29,4 +29,12 @@ pub(crate) mod lib1_1_mod {
             _i = _i + 1;
         }
     }
+
+    pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
+        let length = envelopes.len();
+        println!("envelopes: Vec<Vec<i32>> 的长度为: {}", length);
+
+
+        return 0;
+    }
 }

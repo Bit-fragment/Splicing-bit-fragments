@@ -19,7 +19,7 @@ pub(crate) mod af {
         for x in list {
             print!("{} ", x);
         }
-        print!("数组长度为:{}",list.len());
+        print!("数组长度为:{}", list.len());
         lib1_1_mod::lib1_1_mod_sort(&mut list);
         print!(" 排序后: ");
         for x in list {
@@ -31,6 +31,10 @@ pub(crate) mod af {
     pub fn f2() {
         println!("This is f2() of af.");
         lib2service_fn_1::f2_lib2service_1();
+        let envelopes: Vec<Vec<i32>> = vec![vec![5, 4], vec![6, 4], vec![6, 7], vec![2, 3]];
+        println!("354. 俄罗斯套娃信封问题 https://leetcode.cn/problems/russian-doll-envelopes/");
+        let return_var: i32 = lib1_1_mod::max_envelopes(envelopes);
+        println!("结果: {}", return_var);
     }
 }
 
