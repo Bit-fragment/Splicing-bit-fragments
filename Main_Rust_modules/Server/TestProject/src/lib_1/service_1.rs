@@ -12,6 +12,20 @@ pub(crate) mod af {
         println!("This is f1() of af.");
         lib2service_fn_1::f1_lib2service_1();
         lib1_1_mod::lib1_1_mod_fn1();
+
+        println!("累加1到100: {}", lib1_1_mod::lib1_1_mod_sum(100));
+        print!("排序前: ");
+        let mut list: [i32; 5] = [5, 1, 3, 4, 2];
+        for x in list {
+            print!("{} ", x);
+        }
+        print!("数组长度为:{}",list.len());
+        lib1_1_mod::lib1_1_mod_sort(&mut list);
+        print!(" 排序后: ");
+        for x in list {
+            print!("{} ", x);
+        }
+        print!("\n");
     }
 
     pub fn f2() {
