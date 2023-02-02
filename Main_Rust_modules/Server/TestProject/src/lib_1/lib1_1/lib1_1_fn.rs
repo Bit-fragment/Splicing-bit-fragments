@@ -31,10 +31,26 @@ pub(crate) mod lib1_1_mod {
     }
 
     pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
-        let length = envelopes.len();
-        println!("envelopes: Vec<Vec<i32>> 的长度为: {}", length);
+        // let length = envelopes.len();
+        // println!("envelopes: Vec<Vec<i32>> 的长度为: {}", length);
+        let mut envelopes = envelopes;
+        envelopes.sort_unstable_by(|a, b| a[0].cmp(&b[0]).then(b[1].cmp(&a[1])));
+        let mut sub = vec![];
+        for envelope in envelopes {
+            let (_, h) = (envelope[0], envelope[1]);
+            let i = sub.binary_search(&h);
+            let i = match i {
+                Ok(i) => i,
+                Err(i) => i,
+            };
+            if i == sub.len() {
+                sub.push(h);
+            } else {
+                sub[i] = h;
+            }
+        }
+        sub.len() as i32
 
-
-        return 0;
+        // return 0;
     }
 }
