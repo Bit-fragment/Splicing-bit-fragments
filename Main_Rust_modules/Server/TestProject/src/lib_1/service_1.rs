@@ -14,18 +14,11 @@ pub(crate) mod af {
         lib1_1_mod::lib1_1_mod_fn1();
 
         println!("累加1到100: {}", lib1_1_mod::lib1_1_mod_sum(100));
-        print!("排序前: ");
         let mut list: [i32; 5] = [5, 1, 3, 4, 2];
-        for x in list {
-            print!("{} ", x);
-        }
-        print!("数组长度为:{}", list.len());
+        println!("排序前: {:?}", list);
         lib1_1_mod::lib1_1_mod_sort(&mut list);
-        print!(" 排序后: ");
-        for x in list {
-            print!("{} ", x);
-        }
-        print!("\n");
+        println!("排序后: {:?}", list);
+
     }
 
     pub fn f2() {
