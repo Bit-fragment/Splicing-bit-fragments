@@ -24,7 +24,7 @@ pub(crate) mod af {
     pub fn f2() {
         println!("This is f2() of af.");
         lib2service_fn_1::f2_lib2service_1();
-        let envelopes: Vec<Vec<i32>> = vec![vec![5, 4], vec![6, 4], vec![6, 7], vec![2, 3]];
+        let envelopes: Vec<Vec<i32>> = vec![vec![5, 4], vec![6, 4], vec![6, 7], vec![2, 3],vec![7, 4],vec![3, 4]];
         println!("354. 俄罗斯套娃信封问题 https://leetcode.cn/problems/russian-doll-envelopes/");
         let return_var: i32 = lib1_1_mod::max_envelopes(envelopes);
         println!("结果: {}", return_var);

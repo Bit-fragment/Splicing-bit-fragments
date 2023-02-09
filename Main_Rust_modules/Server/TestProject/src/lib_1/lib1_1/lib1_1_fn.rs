@@ -36,6 +36,7 @@ pub(crate) mod lib1_1_mod {
         // println!("envelopes: Vec<Vec<i32>> 的长度为: {}", length);
         let mut envelopes = envelopes;
         envelopes.sort_unstable_by(|a, b| a[0].cmp(&b[0]).then(b[1].cmp(&a[1])));
+        println!("排序后的envelopes: {:?}", envelopes);
         let mut sub = vec![];
         for envelope in envelopes {
             let (_, h) = (envelope[0], envelope[1]);
