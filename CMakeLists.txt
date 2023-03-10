@@ -5,3 +5,5 @@ project(Splicing-bit-fragments)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(main main.cpp)
+
+add_executable(TestMain Main_cpp_modules/DataStructureAndAlgorithm/DataStructure/Test/TestMain.cpp)
