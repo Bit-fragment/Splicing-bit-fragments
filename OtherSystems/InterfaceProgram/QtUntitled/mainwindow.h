@@ -1,0 +1,110 @@
+//
+// Created by XMZR on 2023/3/17.
+//
+
+#ifndef QTUNTITLED3_MAINWINDOW_H
+#define QTUNTITLED3_MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QLabel>
+#include <QDialog>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QGridLayout>
+#include <QList>
+#include <QTextEdit>
+
+class MainWindow : public QMainWindow {
+Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+
+    ~MainWindow();
+};
+
+class Dialog : public QDialog {
+Q_OBJECT
+public:
+    explicit Dialog(QWidget *parent = nullptr);
+
+    ~Dialog() override;
+
+private:
+    QLabel *labl1, *labl2;
+    QLineEdit *lineEdit;
+    QPushButton *button;
+
+private slots:
+
+    void showArea();
+};
+
+class Schedule : public QDialog {
+Q_OBJECT
+public:
+    explicit Schedule(QWidget *parent = nullptr);
+
+    ~Schedule() override;
+
+private:
+    QLabel *startDate, *endDate, *title, *concreteContent, *currentState, *completion, *remarks;
+    QLineEdit *InputStartDate, *InputEndDate, *InputTitle, *InputCurrentState, *InputCompletion, *InputRemarks;
+    QPushButton *SubmitButton, *EmptyButton{};
+    QTextEdit *InputConcreteContent;
+
+private slots:
+
+    static void Submit();
+};
+
+class SinginPage : public QDialog {
+Q_OBJECT
+public:
+    explicit SinginPage(QWidget *parent = nullptr);
+
+    ~SinginPage() override;
+
+private:
+    QLabel *account, *password;
+    QLineEdit *InputAccount, *InputPassword;
+    QPushButton *SigninButton, *LoginButton;
+
+private slots:
+
+    void function_login();
+
+    void function_singin();
+};
+
+class LonginPage : public QDialog {
+Q_OBJECT
+public:
+    explicit LonginPage(QWidget *parent = nullptr);
+
+    ~LonginPage() override;
+
+private:
+    QLabel *account, *password_1, *password_2;
+    QLineEdit *InputAccount, *InputPassword_1, *InputPassword_2;
+    QPushButton *SubmitButton;
+
+private slots:
+
+    void function_Submit();
+};
+
+class MyClass {
+public:
+    MyClass();
+
+    ~MyClass();
+
+    void f1();
+
+    void f2();
+
+    void f3();
+};
+
+#endif //QTUNTITLED3_MAINWINDOW_H
