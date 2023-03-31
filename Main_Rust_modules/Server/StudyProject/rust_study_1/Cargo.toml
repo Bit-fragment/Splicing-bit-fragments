@@ -1,0 +1,11 @@
+[package]
+name = "rust_study_1"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = { version = "1.4.8", features = ["mysql"] }
+# features = ["ssl"]
+mysql = { version = "20.1.0" }

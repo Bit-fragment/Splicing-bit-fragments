@@ -31,25 +31,21 @@ fn diverges() -> ! {
     panic!("这个函数根本就不能正常返回!");
 }
 
-trait MyObject {
-    fn f1(&self);
-    fn f2();
+trait MyTrait {
+    fn my_method(&self);
 }
+struct MyStruct {}
 
-
-impl MyObject {
-    fn f1(&self) {
-        println!("我被称为 “方法”（method）");
-    }
-    fn f2() {
-        println!("我被称为 “静态函数”（static function）")
+impl MyTrait for MyStruct {
+    fn my_method(&self) {
+        println!("MyStruct implementation of my_method");
     }
 }
 
 
 fn main() {
-    MyObject.f1();
-    MyObject::f2();
+    let obj: Box<dyn MyTrait> = Box::new(MyStruct {});
+    obj.my_method();
 
     // println!("{:?}",std::env::args());
     for arg in std::env::args() {
