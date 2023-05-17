@@ -22,7 +22,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="309e9957-1cfd-4ff8-aa6c-9f77caeba659" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,9 +64,11 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/Users/XMZR/CLionProjects/Splicing-bit-fragments/Main_c_modules/C algorithm and data structure",
+    "last_opened_file_path": "D:/Users/XMZR/CLionProjects/Splicing-bit-fragments",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,12 +78,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake 应用程序.main">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="TestMain" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Splicing-bit-fragments" TARGET_NAME="TestMain" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Splicing-bit-fragments" RUN_TARGET_NAME="TestMain">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMain" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Splicing-bit-fragments" TARGET_NAME="TestMain" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Splicing-bit-fragments" RUN_TARGET_NAME="TestMain">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -108,6 +109,7 @@
       <workItem from="1680253901604" duration="40000" />
       <workItem from="1680253973979" duration="1000" />
       <workItem from="1682914947217" duration="218000" />
+      <workItem from="1684306546961" duration="519000" />
     </task>
     <servers />
   </component>
