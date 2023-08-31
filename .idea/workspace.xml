@@ -10,7 +10,11 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="WorldSimulation" targetName="WorldSimulation" />
+      <config projectName="WorldSimulation" targetName="tool" />
+      <config projectName="WorldSimulation" targetName="major" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -21,6 +25,23 @@
     <list default="true" id="309e9957-1cfd-4ff8-aa6c-9f77caeba659" name="变更" comment="20230517">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/client/ClientStart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/client/MyClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/configClass/ConfigBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/gameObject/GameWorldObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/server/LoginServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/server/MyServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/MMORPGserverJAVA/MMORPGserver/src/main/java/com/netty/server/ServerStart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherSystems/WebWorldWH/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/OtherSystems/WebWorldWH/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,48 +94,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/XMZR/CLionProjects/Splicing-bit-fragments&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Users/XMZR/CLionProjects/Splicing-bit-fragments",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "D:\\Program Files\\JetBrains\\CLion 2023.1.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\XMZR\CLionProjects\Splicing-bit-fragments\Main_c_modules\C algorithm and data structure" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.main">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMain" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Splicing-bit-fragments" TARGET_NAME="TestMain" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Splicing-bit-fragments" RUN_TARGET_NAME="TestMain">
+  <component name="RunManager" selected="CMake 应用程序.WorldSimulation">
+    <configuration name="WorldSimulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorldSimulation" TARGET_NAME="WorldSimulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WorldSimulation" RUN_TARGET_NAME="WorldSimulation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Splicing-bit-fragments" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Splicing-bit-fragments" RUN_TARGET_NAME="main">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="major" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorldSimulation" TARGET_NAME="major" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tool" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorldSimulation" TARGET_NAME="tool" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.main" />
-      <item itemvalue="CMake 应用程序.TestMain" />
+      <item itemvalue="CMake 应用程序.WorldSimulation" />
+      <item itemvalue="CMake 应用程序.major" />
+      <item itemvalue="CMake 应用程序.tool" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -137,6 +165,7 @@
       <workItem from="1686624751216" duration="21000" />
       <workItem from="1687143380936" duration="66000" />
       <workItem from="1688092301765" duration="31000" />
+      <workItem from="1693482201599" duration="1601000" />
     </task>
     <task id="LOCAL-00001" summary="20230517">
       <created>1684307311133</created>
